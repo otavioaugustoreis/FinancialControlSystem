@@ -8,7 +8,7 @@ using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Add services to the container. tudo isso será instanciado na  aplicação
 
 builder.Services.AddControllers();
 
@@ -32,6 +32,7 @@ builder.Logging.AddProvider(new CustomLoggerProvider(new CustomLoggerProviderCon
 }));
 
 
+//Cada app.Use... ou app.Map... adiciona um middleware ao pipeline.
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
