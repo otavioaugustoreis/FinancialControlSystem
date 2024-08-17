@@ -12,6 +12,5 @@ namespace RepositoryPattern.Context
         {
             base.OnModelCreating(modelBuilder);
         }
-
     }
 }

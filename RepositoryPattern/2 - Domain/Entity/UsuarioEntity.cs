@@ -1,6 +1,6 @@
 ﻿namespace RepositoryPattern.Entity
 {
-    public class UserEntity
+    public class UsuarioEntity
     {
     }
 }

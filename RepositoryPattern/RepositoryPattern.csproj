@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -18,8 +18,7 @@
 
   <ItemGroup>
     <Folder Include="1 - Presentation\Controllers\" />
-    <Folder Include="4 - Infrastructure\" />
-    <Folder Include="5 - Application\" />
+    <Folder Include="4 - Application\Providers\" />
   </ItemGroup>
 
 </Project>
