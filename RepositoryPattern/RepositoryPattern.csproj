@@ -17,7 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="1 - Presentation\Controllers\" />
     <Folder Include="4 - Application\Providers\" />
   </ItemGroup>
 

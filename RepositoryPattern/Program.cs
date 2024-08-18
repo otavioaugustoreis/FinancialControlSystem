@@ -1,4 +1,6 @@
 using Microsoft.EntityFrameworkCore;
+using RepositoryPattern._2___Domain.Concreta;
+using RepositoryPattern._2___Domain.Interface;
 using RepositoryPattern.Context;
 using RepositoryPattern.Logging;
 using RepositoryPattern.Middlewares;
@@ -17,6 +19,11 @@ builder.Services.AddControllers().AddJsonOptions(options => options.JsonSerializ
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+builder.Services.AddScoped<ILogin, LoginDomain>();
+builder.Services.AddScoped<IMesGasto, MesGastoDomain>();
+builder.Services.AddScoped<IGasto, GastoDomain>();
+builder.Services.AddScoped<IUsuario, UsuarioDomain>();
+builder.Services.AddScoped<IReceita, ReceitaDomain>();
 
 //Configurando conexão com banco de dados
 string mySqlConnection = builder.Configuration.GetConnectionString("DefaultConnection");

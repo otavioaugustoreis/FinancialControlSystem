@@ -13,7 +13,6 @@ namespace RepositoryPattern.Entity
         [Required]
         public double NrValor { get; set; }
 
-
         [Column("ds_local")]
         [Required]
         public string DsLocal { get; set; }
@@ -25,12 +24,19 @@ namespace RepositoryPattern.Entity
         [JsonIgnore]
         public CategoriaEntity CategoriaEntity { get; set; }
 
+        public UsuarioEntity UsuarioEntity { get; set; }
+
+        [Column("fk_usuario")]
+        [Required]
+        public int FkUsuario { get; set; }
+
         public GastoEntity() : base() { }
 
-        public GastoEntity(int id, string DsLocal, CategoriaEntity CategoriaEntity) : base(id, DateTime.Now)
+        public GastoEntity(int id, string DsLocal, CategoriaEntity CategoriaEntity, UsuarioEntity usuario) : base(id, DateTime.Now)
         { 
             this.DsLocal = DsLocal;
             this.CategoriaEntity = CategoriaEntity;
+            this.UsuarioEntity = usuario;
         }
     }
 }

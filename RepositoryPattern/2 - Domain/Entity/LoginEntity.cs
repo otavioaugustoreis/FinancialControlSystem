@@ -18,7 +18,7 @@ namespace RepositoryPattern._2___Domain.Entity
             DsSenha = dsSenha;
         }
 
-        public UsuarioEntity Usuario { get; set; }
+        public UsuarioEntity UsuarioEntity { get; set; }
 
         [Column("fk_usuario")]
         [Required]
