@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using RepositoryPattern._2___Domain.Entity;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
 //Feita
@@ -23,6 +24,9 @@ namespace RepositoryPattern.Entity
         {
             CategoriaEntity.Add(categoriaEntity);
         }
+
+        [JsonIgnore]
+        public ICollection<ReceitaMesGastoEntity> ReceitaMesGastos { get; set; }
     }
 }
 

@@ -1,7 +1,9 @@
-﻿using RepositoryPattern._2___Domain.Enum;
+﻿using RepositoryPattern._2___Domain.Entity;
+using RepositoryPattern._2___Domain.Enum;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Security.Cryptography.X509Certificates;
+using System.Text.Json.Serialization;
 
 //Feita
 namespace RepositoryPattern.Entity
@@ -26,6 +28,9 @@ namespace RepositoryPattern.Entity
             VlTotal = vlTotal;
         }
 
-        
+        [JsonIgnore]
+        public ICollection<ReceitaMesGastoEntity> ReceitaMesGastos { get; set; }
+
+
     }
 }

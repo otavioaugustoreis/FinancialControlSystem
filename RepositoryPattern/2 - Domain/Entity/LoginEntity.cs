@@ -12,9 +12,10 @@ namespace RepositoryPattern._2___Domain.Entity
         {
         }
 
-        public LoginEntity(int fkUsuario, string dsSenha, int id) : base(id, DateTime.Now)
+        public LoginEntity(UsuarioEntity usuario, string dsSenha, int id) : base(id, DateTime.Now)
         {
-            FkUsuario = fkUsuario;
+            this.UsuarioEntity = usuario;
+            FkUsuario = UsuarioEntity.Id;
             DsSenha = dsSenha;
         }
 

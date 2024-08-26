@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using RepositoryPattern._2___Domain.Entity;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
@@ -21,6 +22,13 @@ namespace RepositoryPattern.Entity
         [Required]
         public int FkCategoria { get; set; }
 
+        [Column("fk_banco")]
+        [Required]
+        public int FkBanco { get; set; }
+
+        public BancoEntity BancoEntity { get; set; }
+
+
         [JsonIgnore]
         public CategoriaEntity CategoriaEntity { get; set; }
 
@@ -32,11 +40,16 @@ namespace RepositoryPattern.Entity
 
         public GastoEntity() : base() { }
 
-        public GastoEntity(int id, string DsLocal, CategoriaEntity CategoriaEntity, UsuarioEntity usuario) : base(id, DateTime.Now)
+        public GastoEntity(int id, string DsLocal, CategoriaEntity CategoriaEntity, UsuarioEntity usuario, BancoEntity BancoEntity) : base(id, DateTime.Now)
         { 
             this.DsLocal = DsLocal;
             this.CategoriaEntity = CategoriaEntity;
             this.UsuarioEntity = usuario;
+            this.BancoEntity = BancoEntity;
+            FkUsuario = this.UsuarioEntity.Id;
+            FkCategoria = this.CategoriaEntity.Id;
+            FkBanco = this.BancoEntity.Id;
+
         }
     }
 }

@@ -24,6 +24,8 @@ builder.Services.AddScoped<IMesGasto, MesGastoDomain>();
 builder.Services.AddScoped<IGasto, GastoDomain>();
 builder.Services.AddScoped<IUsuario, UsuarioDomain>();
 builder.Services.AddScoped<IReceita, ReceitaDomain>();
+builder.Services.AddScoped<IReceitaMesGasto, ReceitaMesGastoDomain>();
+builder.Services.AddScoped<IBanco, BancoDomain>();
 
 //Configurando conexão com banco de dados
 string mySqlConnection = builder.Configuration.GetConnectionString("DefaultConnection");

@@ -2,7 +2,7 @@
 
 namespace RepositoryPattern.Controllers
 {
-    public interface IControllerPaterrn<T>
+    public interface IControllerPattern<T>
     {
         public ActionResult<IEnumerable<T>> Get();
         public ActionResult<T> GetId(int id);

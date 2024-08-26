@@ -11,13 +11,14 @@ namespace RepositoryPattern.Context
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
-        public DbSet<UsuarioEntity>   Usuario     { get; set; }
-        public DbSet<CategoriaEntity> Categoria   { get; set; }
-        public DbSet<LoginEntity>     Login       { get; set; }
-        public DbSet<MesGastoEntity>  MesGasto    { get; set; }
-        public DbSet<ReceitaEntity>   Receita     { get; set; }
-        public DbSet<GastoEntity>     Gasto       { get; set; }
-
+        public DbSet<UsuarioEntity>          Usuario         { get; set; }
+        public DbSet<CategoriaEntity>        Categoria       { get; set; }
+        public DbSet<LoginEntity>            Login           { get; set; }
+        public DbSet<MesGastoEntity>         MesGasto        { get; set; }
+        public DbSet<ReceitaEntity>          Receita         { get; set; }
+        public DbSet<GastoEntity>            Gasto           { get; set; }
+        public DbSet<BancoEntity>            Banco           { get; set; }
+        public DbSet<ReceitaMesGastoEntity>  ReceitaMesGasto { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -41,6 +42,21 @@ namespace RepositoryPattern.Context
                         .HasMany(p => p.CategoriaEntity)
                         .WithOne(c => c.ReceitaEntities)
                         .HasForeignKey(c => c.FkReceita);
+
+            modelBuilder.Entity<BancoEntity>()
+                        .HasMany(g => g.GastoEntity)
+                        .WithOne(b => b.BancoEntity)
+                        .HasForeignKey(g => g.FkBanco);
+
+            modelBuilder.Entity<ReceitaMesGastoEntity>()
+                        .HasOne(rmg => rmg.ReceitaEntity)
+                        .WithMany(r => r.ReceitaMesGastos)
+                        .HasForeignKey(rmg => rmg.FkReceita);
+
+            modelBuilder.Entity<ReceitaMesGastoEntity>()
+                        .HasOne(rmg => rmg.MesGastoEntity)
+                        .WithMany(mg => mg.ReceitaMesGastos)
+                        .HasForeignKey(rmg => rmg.FkMesGasto);
 
             base.OnModelCreating(modelBuilder);
         }

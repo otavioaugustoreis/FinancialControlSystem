@@ -5,6 +5,7 @@ using System.Text.Json.Serialization;
 
 namespace RepositoryPattern.Entity
 {
+    [Table("TB_USUARIO")]
     public class UsuarioEntity : EntityPattern
     {
         [Column("ds_nome")]

@@ -15,6 +15,7 @@ namespace RepositoryPattern.Entity
         {
             DsNome = dsNome;
             ReceitaEntities = receitaEntities;
+            FkReceita = ReceitaEntities.Id;
         }
 
         [JsonIgnore]
