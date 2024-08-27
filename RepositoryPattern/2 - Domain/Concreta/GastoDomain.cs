@@ -10,10 +10,15 @@ namespace RepositoryPattern._2___Domain.Concreta
         public GastoDomain(AppDbContext context) : base(context)
         {
         }
-
+         
         public void AdicionarGasto()
         {
             return;
+        }
+
+        public void AdicionarReceitaMesGasto(GastoEntity gastoEntity)
+        {
+            throw new NotImplementedException();
         }
     }
 }

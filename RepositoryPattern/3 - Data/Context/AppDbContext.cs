@@ -22,7 +22,6 @@ namespace RepositoryPattern.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //Método de definição bem interessante
             modelBuilder.Entity<UsuarioEntity>()
                         .HasOne(u => u.LoginEntity)
                         .WithOne(u => u.UsuarioEntity)
