@@ -7,5 +7,6 @@ namespace RepositoryPattern._2___Domain.Interface
 {
     public interface ILogin : IRepository<LoginEntity>
     {
+        public void CadastrarLogin(UsuarioEntity usuarioEntity);
     }
 }

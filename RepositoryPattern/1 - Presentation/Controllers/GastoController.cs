@@ -5,6 +5,8 @@ using RepositoryPattern.Entity;
 
 namespace RepositoryPattern._1___Presentation.Controllers
 {
+    [Route("[controller]")]
+    [ApiController]
     public class GastoController : ControllerBase, IControllerPattern<GastoEntity>
     {
         public ActionResult<GastoEntity> Delete(int id)

@@ -5,6 +5,9 @@ using RepositoryPattern.Entity;
 
 namespace RepositoryPattern._1___Presentation.Controllers
 {
+
+    [Route("[controller]")]
+    [ApiController]
     public class CategoriaController : ControllerBase, IControllerPattern<CategoriaEntity>
     {
         public ActionResult<CategoriaEntity> Delete(int id)

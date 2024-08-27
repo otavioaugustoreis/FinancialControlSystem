@@ -33,8 +33,7 @@
 
         private void EscreverTextoNoArquivo(string mensagem)
         {
-            //Nessa variável, você pode colocar o caminho de um arquivo txt. como por exemplo: C:\Desktop\logging\logging_notes_application.txt 
-            string caminhoArquivoLog = @"...";
+            string caminhoArquivoLog = @"C:\logs\logging.txt";
 
 
             using (StreamWriter streamWriter = new StreamWriter(caminhoArquivoLog, true))

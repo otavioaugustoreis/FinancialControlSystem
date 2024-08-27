@@ -5,6 +5,7 @@ using RepositoryPattern.Context;
 using RepositoryPattern.Logging;
 using RepositoryPattern.Middlewares;
 using RepositoryPattern.Repository;
+using RepositoryPattern.UnitOfWork;
 using System;
 using System.Text.Json.Serialization;
 
@@ -26,6 +27,7 @@ builder.Services.AddScoped<IUsuario, UsuarioDomain>();
 builder.Services.AddScoped<IReceita, ReceitaDomain>();
 builder.Services.AddScoped<IReceitaMesGasto, ReceitaMesGastoDomain>();
 builder.Services.AddScoped<IBanco, BancoDomain>();
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 //Configurando conexão com banco de dados
 string mySqlConnection = builder.Configuration.GetConnectionString("DefaultConnection");

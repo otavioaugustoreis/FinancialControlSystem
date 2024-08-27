@@ -4,6 +4,9 @@ using RepositoryPattern.Controllers;
 
 namespace RepositoryPattern._1___Presentation.Controllers
 {
+
+    [Route("[controller]")]
+    [ApiController]
     public class BancoController : ControllerBase, IControllerPattern<BancoEntity>
     {
         
