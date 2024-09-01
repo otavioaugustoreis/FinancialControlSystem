@@ -26,7 +26,7 @@ namespace RepositoryPattern.Entity
         }
 
         [JsonIgnore]
-        public ICollection<ReceitaMesGastoEntity> ReceitaMesGastos { get; set; }
+        public ICollection<RelatorioEntity> ReceitaMesGastos { get; set; }
     }
 }
 

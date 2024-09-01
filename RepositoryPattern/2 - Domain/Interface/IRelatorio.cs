@@ -4,7 +4,7 @@ using RepositoryPattern.Repository;
 
 namespace RepositoryPattern._2___Domain.Interface
 {
-    public interface IReceitaMesGasto : IRepository<ReceitaMesGastoEntity>
+    public interface IRelatorio : IRepository<RelatorioEntity>
     {
         public void AdicionarReceitaMesGastoEntioty();
     }

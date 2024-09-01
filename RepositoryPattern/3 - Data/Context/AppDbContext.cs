@@ -18,7 +18,7 @@ namespace RepositoryPattern.Context
         public DbSet<ReceitaEntity>          Receita         { get; set; }
         public DbSet<GastoEntity>            Gasto           { get; set; }
         public DbSet<BancoEntity>            Banco           { get; set; }
-        public DbSet<ReceitaMesGastoEntity>  ReceitaMesGasto { get; set; }
+        public DbSet<RelatorioEntity>        Relatorio       { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -47,12 +47,12 @@ namespace RepositoryPattern.Context
                         .WithOne(b => b.BancoEntity)
                         .HasForeignKey(g => g.FkBanco);
 
-            modelBuilder.Entity<ReceitaMesGastoEntity>()
+            modelBuilder.Entity<RelatorioEntity>()
                         .HasOne(rmg => rmg.ReceitaEntity)
                         .WithMany(r => r.ReceitaMesGastos)
                         .HasForeignKey(rmg => rmg.FkReceita);
 
-            modelBuilder.Entity<ReceitaMesGastoEntity>()
+            modelBuilder.Entity<RelatorioEntity>()
                         .HasOne(rmg => rmg.MesGastoEntity)
                         .WithMany(mg => mg.ReceitaMesGastos)
                         .HasForeignKey(rmg => rmg.FkMesGasto);

@@ -15,7 +15,7 @@ namespace RepositoryPattern.UnitOfWork
         private IReceita?         Receita;
         private IUsuario?         Usuario;
         private IBanco?           Banco;
-        private IReceitaMesGasto? ReceitaMesGasto;
+        private IRelatorio? ReceitaMesGasto;
 
 
         public AppDbContext _context;
@@ -77,11 +77,11 @@ namespace RepositoryPattern.UnitOfWork
             }
         }
 
-        public IReceitaMesGasto _ReceitaMesGasto
+        public IRelatorio _ReceitaMesGasto
         {
             get
             {
-                return ReceitaMesGasto = ReceitaMesGasto ?? new ReceitaMesGastoDomain(_context);
+                return ReceitaMesGasto = ReceitaMesGasto ?? new RelatorioDomain(_context);
             }
         }
 

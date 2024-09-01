@@ -25,7 +25,7 @@ builder.Services.AddScoped<IMesGasto, MesGastoDomain>();
 builder.Services.AddScoped<IGasto, GastoDomain>();
 builder.Services.AddScoped<IUsuario, UsuarioDomain>();
 builder.Services.AddScoped<IReceita, ReceitaDomain>();
-builder.Services.AddScoped<IReceitaMesGasto, ReceitaMesGastoDomain>();
+builder.Services.AddScoped<IReceitaMesGasto, RelatorioDomain>();
 builder.Services.AddScoped<IBanco, BancoDomain>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 

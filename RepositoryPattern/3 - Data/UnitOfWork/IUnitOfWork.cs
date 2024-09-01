@@ -12,7 +12,7 @@ namespace RepositoryPattern.UnitOfWork
         IReceita         _Receita         { get; }
         IUsuario         _Usuario         { get; }
         IBanco           _Banco           { get; }
-        IReceitaMesGasto _ReceitaMesGasto { get;}
+        IRelatorio       _ReceitaMesGasto  { get;}
         void Commit();
     }
 }

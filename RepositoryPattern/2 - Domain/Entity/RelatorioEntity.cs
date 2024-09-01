@@ -6,7 +6,7 @@ using System.Text.Json.Serialization;
 namespace RepositoryPattern._2___Domain.Entity
 {
     [Table("TB_RECEITAMESGASTO")]
-    public class ReceitaMesGastoEntity : EntityPattern
+    public class RelatorioEntity : EntityPattern
     {
         [Column("nr_valor")]
         [Required]
@@ -26,11 +26,11 @@ namespace RepositoryPattern._2___Domain.Entity
         [JsonIgnore]
         public MesGastoEntity MesGastoEntity { get; set; }
 
-        public ReceitaMesGastoEntity() : base()
+        public RelatorioEntity() : base()
         {
         }
 
-        public ReceitaMesGastoEntity(int id, MesGastoEntity MesGastoEntity, ReceitaEntity ReceitaEntity) : base(id, DateTime.Now)
+        public RelatorioEntity(int id, MesGastoEntity MesGastoEntity, ReceitaEntity ReceitaEntity) : base(id, DateTime.Now)
         {
             this.MesGastoEntity = MesGastoEntity; 
             this.ReceitaEntity  =  ReceitaEntity;

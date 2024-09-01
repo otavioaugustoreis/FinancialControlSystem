@@ -6,9 +6,9 @@ using RepositoryPattern.Repository;
 
 namespace RepositoryPattern._2___Domain.Concreta
 {
-    public class ReceitaMesGastoDomain : Repository<ReceitaMesGastoEntity>, IReceitaMesGasto
+    public class RelatorioDomain : Repository<RelatorioEntity>, IRelatorio
     {
-        public ReceitaMesGastoDomain(AppDbContext context) : base(context)
+        public RelatorioDomain(AppDbContext context) : base(context)
         {
         }
         public void AdicionarReceitaMesGastoEntioty()

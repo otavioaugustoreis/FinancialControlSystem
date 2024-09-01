@@ -28,7 +28,6 @@ namespace RepositoryPattern.Entity
 
         public BancoEntity BancoEntity { get; set; }
 
-
         [JsonIgnore]
         public CategoriaEntity CategoriaEntity { get; set; }
 
